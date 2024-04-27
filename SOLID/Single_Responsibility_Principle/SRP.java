@@ -2,53 +2,95 @@ package srp;    // Package for this code classes
 
 import java.util.Scanner;
 
-// Define the Shape interface. This will be our contract for all shapes.
+/**
+ * Shape interface.
+ * This will be our contract for all shapes.
+ */
 interface Shape {
+    /**
+     * Calculate the area of the shape.
+     * @return the area of the shape.
+     */
     double calculateArea();
 }
 
-// Implement the Shape interface with a Circle class.
+/**
+ * Circle class.
+ * Implements the Shape interface.
+ */
 class Circle implements Shape {
     private double radius;
 
+    /**
+     * Circle constructor.
+     * @param radius The radius of the circle.
+     */
     public Circle(double radius) {
         this.radius = radius;
     }
 
+     /**
+     * Calculate the area of the circle.
+     * @return the area of the circle.
+     */
     public double calculateArea() {
         return Math.PI * Math.pow(radius, 2);
     }
 }
 
-// Implement the Shape interface with a Rectangle class.
+/**
+ * Rectangle class.
+ * Implements the Shape interface.
+ */
 class Rectangle implements Shape {
     private double width;
     private double height;
 
+    /**
+     * Rectangle constructor.
+     * @param width,height  of the rectangle.
+     */
     public Rectangle(double width, double height) {
         this.width = width;
         this.height = height;
     }
 
+    /**
+     * Calculate the area of the Rectangle.
+     * @return the area of the Rectangle.
+     */
     public double calculateArea() {
         return width * height;
     }
 }
 
-// Implement the Shape interface with a Square class.
+/**
+ * Square class.
+ * Implements the Shape interface.
+ */
 class Square implements Shape {
     private double side;
 
+    /**
+     * Square constructor.
+     * @param side of the Square.
+     */
     public Square(double side) {
         this.side = side;
     }
 
+    /**
+     * Calculate the area of the Rectangle.
+     * @return the area of the Rectangle.
+     */
     public double calculateArea() {
         return Math.pow(side, 2);
     }
 }
 
-// Main function to calculate Area.
+/**
+ * Main function to calculate Area.
+ */
 public class SRP{
     public static void main(String[] args) {
         
@@ -86,7 +128,8 @@ public class SRP{
     }
 }
 
-/*
+/**
+ *
  * this code is based on single responsibility principle
  * In SRP,there have A class should have only one responsibility.
  * When we design our classes, we should take care that one 
