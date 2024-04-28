@@ -1,60 +1,107 @@
 package OCP;
+import java.util.Scanner;
+ 
+/**
+*
+* @author Sumon Chandra Barman.
+*/
 
-
-// Define the Shape interface. This will be our contract for all shapes.
+/**
+ * Shape interface.
+ * This will be our contract for all shapes.
+ */
 interface Shape {
+    /**
+     * Calculate the area of the shape.
+     * @return the area of the shape.
+     */
     double calculateArea();
 }
 
-// Implement the Shape interface with a Circle class.
+/**
+ * Circle class.
+ * Implements the Shape interface.
+ */
 class Circle implements Shape {
     private double radius;
 
-    // Constructor to initialize the radius of the circle
+     /**
+     * Circle constructor.
+     * @param radius The radius of the circle.
+     */
     public Circle(double radius) {
         this.radius = radius;
     }
 
-    // Method to calculate the area of the circle
+    /**
+     * Calculate the area of the circle.
+     * @return the area of the circle.
+     */
     public double calculateArea() {
         return Math.PI * Math.pow(radius, 2);
     }
 }
 
-// Implement the Shape interface with a Rectangle class.
+/**
+ * Rectangle class.
+ * Implements the Shape interface.
+ */
 class Rectangle implements Shape {
     private double width;
     private double height;
 
-    // Constructor to initialize the width and height of the rectangle
+    /**
+     * Rectangle constructor.
+     * @param height and width is height and width of the Rectangle.
+     */
     public Rectangle(double width, double height) {
         this.width = width;
         this.height = height;
     }
 
-    // Method to calculate the area of the rectangle
+   /**
+     * Calculate the area of the Rectangle.
+     * @return the area of the Rectangle.
+     */
     public double calculateArea() {
         return width * height;
     }
 }
 
-// Implement the Shape interface with a Square class.
+/**
+ * Square class.
+ * Implements the Shape interface.
+ */
 class Square implements Shape {
     private double side;
 
-    // Constructor to initialize the side length of the square
+    /**
+     * Square constructor.
+     * @param side is one side of the square.
+     */
     public Square(double side) {
         this.side = side;
     }
 
-    // Method to calculate the area of the square
+    /**
+     * Calculate the area of the square.
+     * @return the area of the square.
+     */
     public double calculateArea() {
         return Math.pow(side, 2);
     }
 }
 
-// AreaCalculator class is responsible for calculating the area of multiple shapes.
+/**
+ * AreaCalculator class.
+ * Responsible for calculating the area of multiple shapes.
+ */
 class AreaCalculator {
+    /**
+     * Calculate the total area of the given shapes.
+     * @param shapes An array of shapes.
+     * @return the total area of the shapes.
+     */
     public double calculateTotalArea(Shape[] shapes) {
         double totalArea = 0;
         for (Shape shape : shapes) {
@@ -64,6 +111,9 @@ class AreaCalculator {
     }
 }
 
+/**
+ * Main class.
+ */
 public class ocp {
     public static void main(String[] args) {
         // Create instances of shapes
@@ -84,18 +134,18 @@ public class ocp {
 }
 
 /*
+Open-closed Principle (OCP) states:
+--Objects or entities should be open for extension but closed for modification.
+This means that a class should be extendable without modifying the class itself.
+*/
 
+/**
  * In this code, the AreaCalculator class is closed for modification because 
  * i don’t need to change it if you want to add a new shape. 
  * i just need to create a new class that implements the Shape interface 
  * and the AreaCalculator class will be able to calculate its area. 
  * This is the essence of the Open-Closed Principle.
 
-/*
-Open-closed Principle (OCP) states:
---Objects or entities should be open for extension but closed for modification.
-This means that a class should be extendable without modifying the class itself.
-*/
 
 /* */
 
