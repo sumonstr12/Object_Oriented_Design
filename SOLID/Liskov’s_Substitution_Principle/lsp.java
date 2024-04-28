@@ -1,42 +1,77 @@
+/**
+ * Liskov's Substituition Principle
+ * @author Sumon Chandra Barman
+ */
+
 package LSP;
 
-// Define the Bird class
+/**
+ * Bird class.
+ * This class represents a bird with methods to fly and eat.
+ */
 class Bird {
+    /**
+     * Method for the bird to fly.
+     */
     void fly() {
         System.out.println("Bird is flying");
     }
-
+    /**
+     * Method for the bird to eat.
+     */
     void eat() {
         System.out.println("Bird is eating");
     }
 }
 
-// Define the Duck class that extends Bird
+/**
+ * Duck class.
+ * This class extends Bird and represents a duck.
+ */
 class Duck extends Bird {
+    /**
+     * Method for the duck to fly.
+     */
     @Override
     void fly() {
         System.out.println("Duck is flying");
     }
 
+    /**
+     * Method for the duck to eat.
+     */
     @Override
     void eat() {
         System.out.println("Duck is eating");
     }
 }
 
-// Define the Ostrich class that extends Bird
+/**
+ * Ostrich class.
+ * This class extends Bird and represents an ostrich.
+ */
 class Ostrich extends Bird {
+    /**
+     * Method for the ostrich to fly.
+     * Ostriches can't fly, so this method throws an UnsupportedOperationException.
+     */
     @Override
     void fly() {
         throw new UnsupportedOperationException("Ostrich can't fly");
     }
 
+    /**
+     * Method for the ostrich to eat.
+     */
     @Override
     void eat() {
         System.out.println("Ostrich is eating");
     }
 }
 
+/**
+ * Main class.
+ */
 public class lsp {
     public static void main(String[] args) {
         Bird bird1 = new Bird();
