@@ -1,66 +1,123 @@
+/**
+ * Dependency Inversion Principle
+ * @author Sumon Chandra Barman
+ */
+
 package DIP;
 
-
-// Define the Shape interface. This will be our abstraction for all shapes.
+/**
+ * Shape interface.
+ * This will be our abstraction for all shapes.
+ */
 interface Shape {
+    /**
+     * Calculate the area of the shape.
+     * @return the area of the shape.
+     */
     double calculateArea();
 }
 
-// Implement the Shape interface with a Circle class.
+/**
+ * Circle class.
+ * Implements the Shape interface.
+ */
 class Circle implements Shape {
     private double radius;
 
+    /**
+     * Circle constructor.
+     * @param radius The radius of the circle.
+     */
     public Circle(double radius) {
         this.radius = radius;
     }
-
+    
+    /**
+     * Calculate the area of the circle.
+     * @return the area of the circle.
+     */
     public double calculateArea() {
         return Math.PI * Math.pow(radius, 2);
     }
 }
 
-// Implement the Shape interface with a Rectangle class.
+/**
+ * Rectangle class.
+ * Implements the Shape interface.
+ */
 class Rectangle implements Shape {
     private double width;
     private double height;
 
+    /**
+     * Rectangle constructor.
+     * @param width ,height  The width,height of the Rectangle.
+     */
     public Rectangle(double width, double height) {
         this.width = width;
         this.height = height;
     }
 
+    /**
+     * Calculate the area of the Rectangle.
+     * @return the area of the Rectangle.
+     */
     public double calculateArea() {
         return width * height;
     }
 }
 
-// Implement the Shape interface with a Square class.
+/**
+ * Square class.
+ * Implements the Shape interface.
+ */
 class Square implements Shape {
     private double side;
 
+    /**
+     * Square constructor.
+     * @param side one side of the Square.
+     */
     public Square(double side) {
         this.side = side;
     }
 
+    /**
+     * Calculate the area of the Square.
+     * @return the area of the Square.
+     */
     public double calculateArea() {
         return Math.pow(side, 2);
     }
 }
 
-// AreaCalculator class depends on the Shape abstraction, not on the concrete classes.
+/**
+ * AreaCalculator class.
+ * Depends on the Shape abstraction, not on the concrete classes.
+ */
 class AreaCalculator {
     private Shape shape;
 
-    // Constructor injection
+    /**
+     * AreaCalculator constructor.
+     * @param shape The shape to calculate the area for.
+     */
     public AreaCalculator(Shape shape) {
         this.shape = shape;
     }
 
+    /**
+     * Calculate the area of the shape.
+     * @return the area of the shape.
+     */
     public double calculate() {
         return shape.calculateArea();
     }
 }
 
+/**
+ * Main class.
+ */
 public class dip {
     public static void main(String[] args) {
         // Use Circle
